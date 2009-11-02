@@ -1,9 +1,9 @@
-*** chroot/etc/dhcp3/dhclient.conf.orig	2009-04-12 23:03:36.000000000 +0900
---- chroot/etc/dhcp3/dhclient.conf	2009-04-12 23:05:05.000000000 +0900
+*** chroot/etc/dhcp3/dhclient.conf.orig	2009-10-05 13:31:51.000000000 +0900
+--- chroot/etc/dhcp3/dhclient.conf	2009-11-02 04:33:41.000000000 +0900
 ***************
 *** 23,30 ****
   	netbios-name-servers, netbios-scope, interface-mtu,
-  	rfc3442-classless-static-routes;
+  	rfc3442-classless-static-routes, ntp-servers;
   #require subnet-mask, domain-name-servers;
 ! #timeout 60;
 ! #retry 60;
@@ -12,7 +12,7 @@
   #initial-interval 2;
 --- 23,30 ----
   	netbios-name-servers, netbios-scope, interface-mtu,
-  	rfc3442-classless-static-routes;
+  	rfc3442-classless-static-routes, ntp-servers;
   #require subnet-mask, domain-name-servers;
 ! timeout 1;
 ! retry 0;

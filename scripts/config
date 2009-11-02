@@ -1,13 +1,13 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://ftp.jp.debian.org/debian/"
+MIRROR_DEBIAN="http://cdn.debian.net/debian/"
 MIRROR_SECURITY="http://security.debian.org/"
 
 lh_config noautoconfig \
 	--apt-recommends disabled \
 	--categories "main" \
 	--debian-installer live \
-	--debian-installer-distribution lenny \
+	--debian-installer-distribution daily \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
 	--language ja \
 	--mirror-binary ${MIRROR_DEBIAN} \

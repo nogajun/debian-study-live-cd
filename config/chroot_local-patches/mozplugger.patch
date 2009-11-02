@@ -1,7 +1,7 @@
-*** chroot/etc/mozpluggerrc.orig	2009-06-09 10:57:52.000000000 +0900
---- chroot/etc/mozpluggerrc	2009-06-09 10:57:52.000000000 +0900
+*** chroot/etc/mozpluggerrc.orig	2009-08-11 02:56:31.000000000 +0900
+--- chroot/etc/mozpluggerrc	2009-11-02 04:41:24.000000000 +0900
 ***************
-*** 185,191 ****
+*** 177,183 ****
   audio/x-mid:midi,mid:MIDI audio file
   audio/midi:midi,mid:MIDI audio file
   audio/x-midi:midi,mid:MIDI audio file
@@ -9,7 +9,7 @@
   	controls: playmidi "$file"
   
   audio/mod:mod:Soundracker audio Module
---- 185,191 ----
+--- 177,183 ----
   audio/x-mid:midi,mid:MIDI audio file
   audio/midi:midi,mid:MIDI audio file
   audio/x-midi:midi,mid:MIDI audio file
@@ -18,22 +18,38 @@
   
   audio/mod:mod:Soundracker audio Module
 ***************
-*** 222,227 ****
---- 222,228 ----
-  audio/x-mpeg-url:m3u:MPEG music resource locator
+*** 212,217 ****
+--- 212,218 ----
+  audio/x-mpegurl:m3u:MPEG music resource locator
   audio/x-scpls:pls:Shoutcast Playlists
   #	controls: mpg321 -q -@ "$file"
 + 	controls: totem "$file"
-  	HELPER(xmms -e -p "$file")
+  	nokill noisy : xmms -e -p "$file"
   
   audio/x-ogg:ogg:OGG audio
 ***************
-*** 315,320 ****
---- 316,322 ----
+*** 304,314 ****
+  text/pdf:pdf:PDF file
   text/x-pdf:pdf:PDF file
   	ACROREAD()
-  	repeat noisy swallow(evince) fill: evince "$file"
-+ 	repeat noisy swallow(epdfview) fill: epdfview "$file"
   	repeat noisy swallow(kpdf) fill: kpdf "$file"
-  	repeat noisy swallow(Xpdf) fill: xpdf -g +9000+9000 "$file"
+- 	repeat noisy swallow(Xpdf) fill: xpdf -g +9000+9000 "$file"
+  	repeat noisy swallow(okular) fill: okular "$file"
   	GV()
+! 	repeat noisy fill exits: evince "$file"
+  
+  application/x-dvi:dvi:DVI file
+          repeat swallow(kdvi) fill: kdvi "$file"
+--- 305,316 ----
+  text/pdf:pdf:PDF file
+  text/x-pdf:pdf:PDF file
+  	ACROREAD()
++ 	repeat noisy swallow(epdfview) fill: epdfview "$file"
++ 	repeat noisy swallow(evince) evince "$file"
+  	repeat noisy swallow(kpdf) fill: kpdf "$file"
+  	repeat noisy swallow(okular) fill: okular "$file"
+  	GV()
+! 	repeat noisy fill exits: xpdf -g +9000+9000 "$file"
+  
+  application/x-dvi:dvi:DVI file
+          repeat swallow(kdvi) fill: kdvi "$file"

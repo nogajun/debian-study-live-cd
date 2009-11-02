@@ -6,10 +6,12 @@ acpi acpi-support
 aptitude gdebi
 bzip2 unzip p7zip-full
 cpufrequtils powernowd
+lsb-release
 
 #if DISTRIBUTION lenny
-dash insserv
+dash 
 #endif
+insserv
 
 prelink usplash
 libengine-pkcs11-openssl

@@ -6,12 +6,20 @@ iceweasel-l10n-ja
 lv
 manpages-ja
 nkf
-# openoffice.org-help-ja openoffice.org-l10n-ja
 ttf-kochi-gothic ttf-kochi-mincho
-ttf-mona
 ttf-sazanami-gothic ttf-sazanami-mincho
 ttf-vlgothic
 xfonts-shinonome
 uim uim-qt uim-qt3
 uim-anthy
 uim-applet-gnome
+
+#if DISTRIBUTION lenny
+ttf-mona
+#endif
+
+#if DISTRIBUTION squeeze sid
+openoffice.org-help-ja openoffice.org-l10n-ja
+otf-ipafont ttf-monapo
+#endif
+
