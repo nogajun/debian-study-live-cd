@@ -30,6 +30,7 @@ screenlets python-feedparser
 
 # application
 filezilla
+jd
 #if DISTRIBUTION lenny
 filezilla-locales
 ttf-bitstream-vera 

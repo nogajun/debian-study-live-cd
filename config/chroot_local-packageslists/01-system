@@ -2,7 +2,7 @@
 # powertop
 # gnome-app-install
 vbetool
-acpi acpi-support
+acpi acpi-support acpid
 aptitude gdebi
 bzip2 unzip p7zip-full
 cpufrequtils powernowd
@@ -24,9 +24,10 @@ live-helper
 reportbug python-urwid
 
 # disk/file utilities
-fuse-utils fusesmb ntfs-3g sshfs
+fuse-utils ntfs-3g sshfs smbnetfs xmount fuseiso9660 ifuse
 dosfstools ntfsprogs reiser4progs reiserfsprogs xfsprogs jfsutils
 mtools
+parted
 
 # live-initramfs recommends
 mtd-utils genext2fs curlftpfs loop-aes-utils squashfs-tools uuid-runtime

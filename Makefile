@@ -1,5 +1,5 @@
 BOOTOPTION_LIVE = quiet locale=ja_JP.UTF-8 kmodel=jp106 vga=788 video=vesa:ywrap,mtrr utc=no tz=Asia/Tokyo splash persistent
-BOOTOPTION_INSTALLER = -- quiet vga=788 video=vesa:ywrap,mtrr locale=ja_JP.UTF-8 kmodel=jp106 utc=no tz=Asia/Tokyo
+BOOTOPTION_INSTALLER = -- quiet locale=ja_JP.UTF-8 kmodel=jp106 vga=788 video=vesa:ywrap,mtrr utc=no tz=Asia/Tokyo
 
 build: clean config-sid config-iso config-gnome
 	sudo lh_build
@@ -19,7 +19,7 @@ config-lenny:
 
 config-sid:
 	lh_config \
-		--distribution sid \
+		--distribution squeeze \
 		--bootappend-live "$(BOOTOPTION_LIVE) klayout=jp" \
 		--linux-packages "linux-image-2.6.30-2 aufs-modules-2.6.30-2" 
 

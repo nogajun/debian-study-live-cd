@@ -12,6 +12,9 @@ fdclone
 dmraid
 #mdadm
 lvm2
+ophcrack bkhive samdump2
+ntfs-config
+smartmontools gsmartcontrol
 
 #if DISTRIBUTION lenny
 grub
@@ -19,4 +22,3 @@ grub
 #if DISTRIBUTION squeeze sid
 grub-legacy
 #endif
-
