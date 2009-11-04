@@ -1,0 +1,20 @@
+earth3d
+garmin-forerunner-tools
+gosmore
+gpsbabel
+gpscorrelate gpscorrelate-gui
+gpsd gpsd-clients python-gps
+gpsdrive gpsdrive-data gpsdrive-scripts
+gpsman gpsmanshp
+gpstrans
+gpx2shp
+josm josm-plugins
+merkaartor
+mkgmap
+navit navit-data navit-graphics-gtk-drawing-area navit-graphics-qt-qpainter
+navit-gui-gtk navit-gui-internal osm2navit osmosis
+qlandkartegt qlandkartegt-garmin
+science-config science-tasks
+tangogps
+thuban
+viking

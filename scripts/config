@@ -1,5 +1,6 @@
 #!/bin/sh
 
+#MIRROR_DEBIAN="http://ftp.tw.debian.org/debian/"
 MIRROR_DEBIAN="http://cdn.debian.net/debian/"
 MIRROR_SECURITY="http://security.debian.org/"
 
@@ -17,5 +18,5 @@ lh_config noautoconfig \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--bootloader syslinux \
 	--syslinux-menu vesamenu \
-	--syslinux-timeout 30 \
+	--syslinux-timeout 15 \
 	${@}

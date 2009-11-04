@@ -7,26 +7,30 @@ cups cups-client cups-driver-gutenprint foomatic-filters-ppds system-config-prin
 foo2zjs hp-ppd printconf hplip-gui openprinting-ppds
 
 # disk/filesystem
-disk-manager
-gparted
+disk-manager gparted
 
 # multimedia
 totem gimp inkscape xsane brasero f-spot
 gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly gstreamer0.10-fluendo-mp3
-mozplugger totem-mozilla swfdec-mozilla icedtea-gcjwebplugin mozilla-mplayer
+totem-mozilla mozilla-plugin-gnash icedtea-gcjwebplugin mozilla-mplayer
 ffmpeg python-coherence dcraw sqlite3
 bluetooth
+banshee banshee-extension-coverwallpaper banshee-extension-lyrics banshee-extension-mirage
+podsleuth
+gimp-data-extras
+imagemagick
 
 # gnome
 gthumb hardinfo liferea tomboy network-manager-gnome
-gnome-audio fam gnome-accessibility
-gnome-extra-icons gnome-games-extra-data
-gnome-do gnome-do-plugins
+gnome-audio fam gnome-accessibility gnome-extra-icons gnome-games-extra-data
+gnome-do gnome-do-plugins gnome-do-docklets
 iceweasel-gnome-support
 rarian-compat
 nautilus-gksu nautilus-open-terminal
 gnome-device-manager libsmbios-bin
 screenlets python-feedparser
+gnome-ppp update-notifier
+grdc rdesktop
 
 # application
 filezilla
@@ -34,25 +38,31 @@ jd
 #if DISTRIBUTION lenny
 filezilla-locales
 ttf-bitstream-vera 
-#endif
-
-# openoffice.org openoffice.org-gnome
 pidgin
-screen
-smbclient ssh tsclient
-w3m-img lynx-cur
-wine
-xdg-user-dirs xdg-user-dirs-gtk xdg-utils
-
-#if DISTRIBUTION lenny
 emacs22-gtk
+wine
+#endif
+#if DISTRIBUTION squeeze
+wine
+#endif
+#if DISTRIBUTION sid
+wine-unstable
 #endif
 #if DISTRIBUTION squeeze sid
+openoffice.org openoffice.org-gnome openoffice.org-ogltrans openoffice.org-pdfimport
+openoffice.org-presentation-minimizer openoffice.org-presenter-console 
 emacs23
+unetbootin unetbootin-translations
+telepathy-butterfly telepathy-gabble telepathy-haze telepathy-idle
+telepathy-salut telepathy-sofiasip telepathy-specification
 #endif
 
-vim-gnome
-live-magic
+
+screen smbclient ssh 
+w3m-img lynx-cur
+xdg-user-dirs xdg-user-dirs-gtk xdg-utils
+
+vim-gnome live-magic
 wireless-tools
 
 # virtualization
@@ -61,19 +71,11 @@ qemu sharutils kqemu-common
 virt-viewer virt-manager libvirt-bin
 #if DISTRIBUTION squeeze sid
 virtualbox-ose virtualbox-ose-qt
+virtualbox-ose-guest-utils virtualbox-ose-guest-x11
 #endif
 
-# games/fun
-titanion
-tumiki-fighters
 
-# kernel
-#atl2-modules-2.6-686
-#et131x-modules-2.6-686
-#gspca-modules-2.6-686
-#loop-aes-modules-2.6-686
-#speakup-modules-2.6-686
-#tp-smapi-modules-2.6-686
-# virtualbox-ose-guest-modules-2.6-686
-#kqemu-modules-2.6.26-2-686
-#kvm-modules-2.6.26-2-686
+# games/fun
+titanion tumiki-fighters
+
+

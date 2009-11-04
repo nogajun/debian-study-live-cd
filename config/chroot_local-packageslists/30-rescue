@@ -9,15 +9,15 @@ samba smbfs
 blktool sdparm hdparm 
 rsync
 fdclone
-dmraid
-#mdadm
-lvm2
 ophcrack bkhive samdump2
-ntfs-config
+ntfs-config scrounge-ntfs
 smartmontools gsmartcontrol
 
 #if DISTRIBUTION lenny
 grub
+dmraid
+mdadm
+lvm2
 #endif
 #if DISTRIBUTION squeeze sid
 grub-legacy

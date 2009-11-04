@@ -4,9 +4,11 @@
 vbetool
 acpi acpi-support acpid
 aptitude gdebi
-bzip2 unzip p7zip-full
+bzip2 unzip p7zip-full xz-utils
 cpufrequtils powernowd
 lsb-release
+bash-completion
+zsh
 
 #if DISTRIBUTION lenny
 dash 
@@ -24,7 +26,7 @@ live-helper
 reportbug python-urwid
 
 # disk/file utilities
-fuse-utils ntfs-3g sshfs smbnetfs xmount fuseiso9660 ifuse
+fuse-utils ntfs-3g smbnetfs xmount fuseiso9660 ifuse sshfs
 dosfstools ntfsprogs reiser4progs reiserfsprogs xfsprogs jfsutils
 mtools
 parted
