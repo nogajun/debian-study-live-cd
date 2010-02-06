@@ -12,7 +12,7 @@ disk-manager gparted
 # multimedia
 totem gimp inkscape xsane brasero f-spot
 gstreamer0.10-ffmpeg gstreamer0.10-plugins-bad gstreamer0.10-plugins-ugly gstreamer0.10-fluendo-mp3
-totem-mozilla mozilla-plugin-gnash icedtea-gcjwebplugin mozilla-mplayer
+totem-mozilla mozilla-plugin-gnash icedtea6-plugin 
 ffmpeg python-coherence dcraw sqlite3
 bluetooth
 banshee banshee-extension-coverwallpaper banshee-extension-lyrics banshee-extension-mirage
@@ -24,7 +24,6 @@ imagemagick
 gthumb hardinfo liferea tomboy network-manager-gnome
 gnome-audio fam gnome-accessibility gnome-extra-icons gnome-games-extra-data
 gnome-do gnome-do-plugins gnome-do-docklets
-iceweasel-gnome-support
 rarian-compat
 nautilus-gksu nautilus-open-terminal
 gnome-device-manager libsmbios-bin
@@ -62,7 +61,7 @@ screen smbclient ssh
 w3m-img lynx-cur
 xdg-user-dirs xdg-user-dirs-gtk xdg-utils
 
-vim-gnome live-magic
+vim-gnome 
 wireless-tools
 
 # virtualization

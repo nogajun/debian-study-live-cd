@@ -1,12 +1,11 @@
 #!/bin/sh
 
-#MIRROR_DEBIAN="http://ftp.tw.debian.org/debian/"
 MIRROR_DEBIAN="http://cdn.debian.net/debian/"
-MIRROR_SECURITY="http://security.debian.org/"
+MIRROR_SECURITY="http://security.geo.debian.org/"
 
-lh_config noautoconfig \
+lh config noautoconfig \
 	--apt-recommends disabled \
-	--categories "main" \
+	--archive-areas "main" \
 	--debian-installer live \
 	--debian-installer-distribution daily \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \

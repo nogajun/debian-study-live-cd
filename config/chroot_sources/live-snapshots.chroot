@@ -1,3 +1,0 @@
-# Debian Live Snapshot
-deb http://live.debian.net/ sid/snapshots main contrib non-free
-deb-src http://live.debian.net/ sid/snapshots main contrib non-free

@@ -13,7 +13,7 @@ gparted
 # multimedia
 exaile totem gimp inkscape xsane gnomebaker
 gstreamer0.10-ffmpeg gstreamer0.10-plugins-ugly gstreamer0.10-plugins-bad
-mozplugger totem-mozilla swfdec-mozilla icedtea-gcjwebplugin
+mozplugger totem-mozilla swfdec-mozilla icedtea6-plugin
 
 # application
 epdfview

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-lh_clean noautoconfig --all ${@}
+lh clean noautoconfig --all ${@}
 
 # Remove generated files
 rm -f config/binary config/bootstrap config/chroot config/common config/source
