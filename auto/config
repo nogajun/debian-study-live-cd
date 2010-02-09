@@ -4,8 +4,9 @@ MIRROR_DEBIAN="http://cdn.debian.net/debian/"
 MIRROR_SECURITY="http://security.geo.debian.org/"
 
 lh config noautoconfig \
-	--apt-recommends disabled \
+	--apt-recommends false \
 	--archive-areas "main" \
+	--bootloader syslinux \
 	--debian-installer live \
 	--debian-installer-distribution daily \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
@@ -15,7 +16,7 @@ lh config noautoconfig \
 	--mirror-bootstrap ${MIRROR_DEBIAN} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
-	--bootloader syslinux \
 	--syslinux-menu vesamenu \
 	--syslinux-timeout 15 \
+    --linux-flavours 486 \
 	${@}

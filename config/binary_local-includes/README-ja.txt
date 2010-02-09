@@ -1,303 +1,306 @@
 ======================================================================
 
 Debian Live DVD (Sid) / Debian Live Installer (Sid)
-�֐��I�[�v���\�[�X2009 (2009/11/06-07)
+オープンソースカンファレンス 2010 February/March
 
-Debian JP Project / �֐�Debian�׋���
-�̂�������� <nogajun@debian.or.jp>
+のがたじゅん <nogajun@debian.or.jp>
+Debian JP Project
 
 ======================================================================
 
 
-�n�߂Ɂ^�ǉ����Ȃ�
+始めに／追加情報など
 ----------------------------------------------------------------------
-Debian Live DVD�����̒ǉ���������͈ȉ���URI�ɂăA�i�E���X����܂��B
-���̕����Ɖ�킹�Ă��ǂ݂��������B
-http://wiki.debian.org/KansaiDebianMeetingKOF2009
+Debian Live DVD制作後の追加情報や訂正は以下のURIにてアナウンスされます。
+この文書とあわせてお読みください。
+http://wiki.debian.org/KansaiDebianMeeting20100313
 
 
-�ڎ�
+目次
 ----------------------------------------------------------------------
-+ Debian Live�ɂ���
++ Debian Liveについて
   1. Live DVD
-  2. DVD�̍�����USB�������ɕۑ����� 
-  3. �悭���鎿��
+  2. DVDの差分をUSBメモリに保存する 
+  3. よくある質問
   4. Debian Live Installer
-+ Debian Live�̃J�X�^�}�C�Y
-+ Debian�׋���̂��m�点
++ Debian Liveのカスタマイズ
++ Debian勉強会のお知らせ
 
 
-Debian Live�ɂ���
+Debian Liveについて
 ----------------------------------------------------------------------
 
-����DVD�́ADebian Live Project��live-helper Snapshot��p���Đ��삳�ꂽ
-Debian Live��Debian Live Installer�̃n�C�u���b�hDVD�ł��B
+このDVDは、Debian Live Projectのlive-helper Snapshotを用いて制作された
+Debian LiveとDebian Live InstallerのハイブリッドDVDです。
 
-�@�EDebian GNU/Linux Sid/Unstable (2009/11/04)
-�@�EDebian Live Project��Snapshot��(1.0.5+20091101.171300)
-�@�@live-helper/live-initramfs���g�p�B
-�@�EDebian Live Installer
-�@�EOpen Street Map�Ŗ𗧂A�v���P�[�V���������^�B
+　・Debian GNU/Linux Sid/Unstable (2010/02/09)
+　・live-helper/live-initramfs Snapshot (2.0~a6+20100131.132048)
+　・Debian Live Installer
+　・Live Installer Launcher
 
-�ȑO�z�z����Debian Live�Ƃ̈Ⴂ�́ADebian�̍ŐV������y�Ɏ�����悤�ɁA
-Debian�̕s����łł���Sid���x�[�X�ɍ쐬���Ă��܂��B
+手軽にDebianの最新環境を試せるように、Debian Unstable(Sid)ベースで作ら
+れています。
 
-�܂��C���X�g�[�����ʏ��Debian Installer�ł͂Ȃ��ALive�������̂܂܃C
-���X�g�[������Debian Live Installer�����^���Ă���̂ŁA��Ԃ������邱��
-�Ȃ��ŐV�����n�[�h�f�B�X�N�ɃC���X�g�[���ł��܂��B
+インストーラにはDebian Live Installerを使用しているので、Debian Live環
+境をそのままハードディスクにインストールできます。
 
-���^���Ă���A�v���P�[�V�����ɂ��ẮAGNOME 2.28���͂���Debian�̍ŐV
-�����͂��߁A�֐��I�[�v���\�[�X��FOSS4G�Ƃ̋��ÂƂ������ƂŁA�����
-Open Street Map�Ŗ𗧂A�v�������^���Ă��܂��B
+今回実験的にDebian Live上からDebian Installerを起動してハードディスクに
+Debianをインストールできる、Live Installer Laucherを収録しました。
 
-�ȑO�̃����[�X�Ŏ��^�����A�����G���A/�֐�Debian�׋���̎����쐬�A�Ǘ���
-�K�v��emacs, git, TeX�̊���A����Debian Live���J�X�^�}�C�Y���邽�߂�
-���A���X�L���[�c�[���A���z����Virtualbox OSE�Ȃǂ����^���Ă��܂��B
+2009年秋に配布したDebian Live収録のOpenStreetMapアプリ、TeX環境、仮想化
+環境は外しています。
 
-���^�p�b�P�[�W�̏ڍׂɂ��Ă�DVD����live/packages.txt���������������B
+収録パッケージの詳細についてはDVD内のlive/packages.txtをご覧ください。
 
 
-Live DVD�Ƃ��Ďg��
+Live DVDとして使う
 ----------------------------------------------------------------------
-Debian Live���N������ɂ̓��j���[�́uLive�v��I�����܂��B
-���ꂼ��̃��j���[�͈ȉ��̂悤�ɂȂ��Ă��܂��B
+Debian Liveを起動するにはメニューの「Live」を選択します。
+それぞれのメニューは以下のようになっています。
 
-�ELive
-�@�ʏ�N�����[�h�ł��B
+・Live
+　通常起動モードです。
 
-�ELive (fail-safe mode)
-�@���ׂẴI�v�V�����𖳌��ɂ��ċN�����郂�[�h�ł��B
-�@���܂��N���ł��Ȃ��ꍇ�Ɏ����Ă݂Ă��������B
+・Live (fail-safe mode)
+　すべてのオプションを無効にして起動するモードです。
+　うまく起動できない場合に試してみてください。
 
-�N�����̃p�����[�^��ǉ�����ɂ́A���j���[�̏��TAB�L�[�������Ēǉ����܂��B
-�p�����[�^�̏ڍׂɂ��ẮADVD��live/parameters.txt���������������B
+起動時のパラメータを追加するには、メニューの上でTABキーを押して追加します。
+パラメータの詳細については、DVDのlive/parameters.txtをご覧ください。
 
 
-DVD�̍�����USB�������ɕۑ�����
+DVDの差分をUSBメモリに保存する
 ----------------------------------------------------------------------
-Debian Live�́A�N�����Ɂulive-rw�v�������́uhome-rw�v�Ƃ������x������
-ext2/3�p�[�e�B�V�������݂���Ǝ����I�Ƀ}�E���g���ADVD�̍�����ۑ�����
-���B(live-rw��/(���[�g)�f�B���N�g���S�̂��Ahome-rw��home�f�B���N�g����
-�ۑ����܂��B)
+Debian Liveは、起動時に「live-rw」もしくは「home-rw」というラベル名の
+ext2/3パーティションをみつけると自動的にマウントし、DVDの差分を保存しま
+す。(live-rwは/(ルート)ディレクトリ全体を、home-rwはhomeディレクトリを
+保存します。)
 
-�����ł�USB��������DVD�̍�����ۑ����邽�߂̕��@��������܂��B
+ここではUSBメモリにDVDの差分を保存するための方法を説明します。
 
-�p�ӂ������:
-�@�EDebian Live DVD
-�@�EUSB������
+用意するもの:
+　・Debian Live DVD
+　・USBメモリ
 
-1. DVD���N����USB���������Z�b�g����B
+1. DVDを起動しUSBメモリをセットする。
 
-USB�������Ȃǃ����[�o�u���f�o�C�X���Z�b�g����Ǝ����I�Ƀ}�E���g����Ă�
-�܂��̂ŁA�A���}�E���g���Ă����܂��B
+USBメモリなどリムーバブルデバイスをセットすると自動的にマウントされてし
+まうので、アンマウントしておきます。
 
-�A���}�E���g�̕��@�́A�}�E���g���ꂽ�f�o�C�X�A�C�R����̃R���e�L�X�g��
-�j���[(�}�E�X�E�N���b�N���j���[)����A�u�A���}�E���g�v��I�т܂��B
+アンマウントの方法は、マウントされたデバイスアイコン上のコンテキストメ
+ニュー(マウス右クリックメニュー)から、「アンマウント」を選びます。
 
-2. �ۑ��p�[�e�B�V�����̍쐬
+2. 保存パーティションの作成
 
-�ulive-rw�v�������́uhome-rw�v�Ƃ������x�����ŁAext3�p�[�e�B�V��������
-�����܂��B�쐬���@��GUI�ł��^�[�~�i���A�ǂ���ł��\���܂���B
+「live-rw」もしくは「home-rw」というラベル名で、ext3パーティションを作
+成します。作成方法はGUIでもターミナル、どちらでも構いません。
 
-2.a. GUI(gparted)����p�[�e�B�V�����쐬
+2.a. GUI(gparted)からパーティション作成
 
-GNOME���j���[��[�ݒ�]>[�V�X�e���Ǘ�]>[GParted] ����GParted���N�����܂��B
+GNOMEメニューの[設定]>[システム管理]>[GParted] からGPartedを起動します。
 
-�E��̃v���_�E�����j���[����USB��������I�сA�p�[�e�B�V�������폜(����
-���̓��T�C�Y)���܂��BUSB��������Windows�Ƌ��p�ɂ���ꍇ�́AFAT�̈��K
-���ȃT�C�Y�ɏk�����A�㔼�ɕۑ��̈���쐬���܂��B
+右上のプルダウンメニューからUSBメモリを選び、パーティションを削除(もし
+くはリサイズ)します。USBメモリをWindowsと共用にする場合は、FAT領域を適
+当なサイズに縮小し、後半に保存領域を作成します。
 
-�󂢂��̈�Ɂulive-rw�v�������́uhome-rw�v�Ƃ������x������ext3�p�[�e�B
-�V�������쐬�����܂��B
+空いた領域に「live-rw」もしくは「home-rw」というラベル名でext3パーティ
+ションを作成をします。
 
-2.b. �^�[�~�i������p�[�e�B�V�����쐬
+2.b. ターミナルからパーティション作成
 
-�^�[�~�i�������Ƃ������Ȃ��ꍇ��root�������K�v�ɂȂ�̂ŁA�ʏ�̒[��
-�ł�sudo -s��root�ɂȂ邩�AGNOME���j���[��[�A�v���P�[�V����]>[�A�N�Z�T
-��]>[�V�X�e���^�[�~�i���E�X�[�p�[���[�U�[]�𗘗p���܂��B
+ターミナルから作業をおこなう場合はroot権限が必要になるので、通常の端末
+ではsudo -sでrootになるか、GNOMEメニューの[アプリケーション]>[アクセサ
+リ]>[システムターミナル・スーパーユーザー]を利用します。
 
-/dev/sdXn��USB�������̃f�o�C�X�t�@�C�����ł�(X�̓A���t�@�x�b�g�An�̓p�[
-�e�B�V�����ԍ�)�Bdmesg�̓��e���m�F������Ŏ����̊��ɍ��킹�ēK�X�ǂ�
-�ւ��Ă��������B
+/dev/sdXnはUSBメモリのデバイスファイル名です(Xはアルファベット、nはパー
+ティション番号)。dmesgの内容を確認した上で自分の環境に合わせて適宜読み
+替えてください。
 
- �p�[�e�B�V�������m�F����B
+ パーティションを確認する。
 
  # fdisk -l
 
-�@cfdisk(�܂���fdisk)�Ńp�[�e�B�V�������쐬���܂��B
+　cfdisk(またはfdisk)でパーティションを作成します。
 
  # cfdisk /dev/sdX
 
-�@�ulive-rw�v�Ƃ������x������ext3�Ńt�H�[�}�b�g���܂��B
+　「live-rw」というラベル名でext3でフォーマットします。
 
  # mkfs.ext3 -L live-rw /dev/sdXn
 
-�@tune2fs��fsck�����Ȃ��悤�ɂ��Ă����Ƃ����ł��傤�B
-�@�W���[�i�����O�̂��߂̗\��̈��ʏ�5%���猸�炵�����ꍇ��-m�I�v�V��
-�����g���Ďw�肵�܂��B-L�I�v�V�����̓��x�����̎w��ł��B
+　tune2fsでfsckをしないようにしておくといいでしょう。
+　ジャーナリングのための予約領域を通常5%から減らしたい場合は-mオプショ
+ンを使って指定します。-Lオプションはラベル名の指定です。
 
  # tune2fs -i0 -c0 -m 3 -L live-rw/dev/sdXn 
 
-3. DVD���ċN�����Ċm�F����
-�@USB���������������܂�DVD���N�����܂��B
-�@�N������USB�������̃p�[�e�B�V������/live/cow�f�B���N�g���Ƀ}�E���g��
-��Ă���΁A�����ۑ����ł��܂��B�@
+3. DVDを再起動して確認する
+　USBメモリを差したままDVDを起動します。
+　起動してUSBメモリのパーティションが/live/cowディレクトリにマウントさ
+れていれば、差分保存ができます。　
 
 
-�悭���鎿��
+よくある質問
 ----------------------------------------------------------------------
 
-�E���O�C����ʂɖ߂��Ă��܂��܂���
+・ログイン画面に戻ってしまいました
 
-10�b�҂Ǝ����I�Ƀ��O�C�����܂��B
-10�b�҂����Ƀ��O�C���������ꍇ�́A���[�U�[���ƃp�X���[�h�͈ȉ��ł��B
+10秒待つと自動的にログインします。
+すぐにログインしたい場合の、ユーザー名とパスワードは以下です。
 
-�@���[�U�[��: user
-�@�p�X���[�h: live
+　ユーザー名: user
+　パスワード: live
 
-�Eroot�����ɂȂ�ɂ́A�ǂ�����΂����ł���?
+・root権限になるには、どうすればいいですか?
 
- $ sudo <�R�}���h> 
+ $ sudo <コマンド> 
 
-���g���܂��B�ق��ɂ�
+を使います。ほかには
 
- * Root Terminal ���J��
- * sudo -s �R�}���h��root�ɂȂ� 
+ * Root Terminal を開く
+ * sudo -s コマンドでrootになる 
 
-���A����܂��B 
+が、あります。 
 
-�E�N�����ɏo�Ă���A�����Ƃ������E�B���h�E�͉��ł���?
 
-Gnome Do�Ƃ����A�v���P�[�V���������`���[�ł��B
-Super(Windows) Key�ƃX�y�[�X�L�[�������ƃ����`���[���N������̂ŁA�N��
-�������A�v���P�[�V�����̖��O��2�A3�������͂��Ă��������B
+Debian Live Installer Launcher
+----------------------------------------------------------------------
+
+!! 注意 !!
+**************************************************************
+** Live Installer Laucher は実験的に収録しています!!        **
+** Debian GNU/Linux Sid(不安定版)環境がインストールされます **
+**************************************************************
+
+
 
 
 Debian Live Installer
 ----------------------------------------------------------------------
 
-!! ���� !!
+!! 注意 !!
 **************************************************************
-** ���̃C���X�g�[���͒ʏ��Debian Installer�ł͂���܂���!! **
-** Debian GNU/Linux Sid(�s�����)�����C���X�g�[������܂� **
+** このインストーラは通常のDebian Installerではありません!! **
+** Debian GNU/Linux Sid(不安定版)環境がインストールされます **
 **************************************************************
 
-Debian Live Installer��Debian Live DVD�̓��e�����̂܂܃n�[�h�f�B�X�N��
-�C���X�g�[�����܂��B����𗘗p���āA��y��unstable�̊����n�[�h�f�B�X
-�N�ɃC���X�g�[�����邱�Ƃ��ł��܂��B
+Debian Live InstallerはDebian Live DVDの内容をそのままハードディスクに
+インストールします。これを利用して、手軽にunstableの環境をハードディス
+クにインストールすることができます。
 
-�C���X�g�[���̋N���́ADVD���N�����ă��j���[����uInstall Text�v��I����
-�܂��B
+インストーラの起動は、DVDを起動してメニューから「Install Text」を選択し
+ます。
 
-�C���X�g�[����Ƃ̂����܂��ȗ���́A�u����ƃL�[�{�[�h���w��v���u�p�[
-�e�B�V�����̍쐬�v���u���[�g�p�X���[�h�ƃ��[�U�[�̍쐬�v���uGRUB�̃C��
-�X�g�[���v�ɂȂ�܂��B
+インストール作業のおおまかな流れは、「言語とキーボードを指定」→「パー
+ティションの作成」→「ルートパスワードとユーザーの作成」→「GRUBのイン
+ストール」になります。
 
-
-======================================================================
-�E�C���X�g�[�����u�p�b�P�[�W�}�l�[�W���̐ݒ�v�Łu���|�W�g���ɃA�N�Z�X
-  �ł��܂���v�Ƃ����G���[���o��
-======================================================================
-Sid��Security Fix�͒ʏ�̃��|�W�g���ɃA�b�v���[�h�����̂ŁA�@
-security.debian.org�̃��|�W�g���͗p�ӂ���Ă��܂���B
-�u������v��I�����āA���̂܂܃C���X�g�[���𑱍s���Ă��������B
 
 ======================================================================
-�E�C���X�g�[������A�L�[�{�[�h���p��L�[�{�[�h�z��ɂȂ��Ă���
+・インストール時「パッケージマネージャの設定」で「リポジトリにアクセス
+  できません」というエラーが出る
 ======================================================================
-�蓮�ŕύX���Ă��������B
-
-GUI�����GNOME���j���[��[�V�X�e��]>[�ݒ�]>[�L�[�{�[�h]���J���A[���C�A�@
-�E�g]�^�u�̃L�[�{�[�h�̌`���Ȃǂ��ȉ��̂悤�ɕύX���Ă��������B
-
-�@�L�[�{�[�h�̌`��: ACPI Standard
-�@���C�A�E�g: Japan / �f�t�H���g�Ƀ`�F�b�N
-
-�^�[�~�i������ύX����ɂ́Adpkg-reconfigure���g����console-setup�̐ݒ�
-��ύX���܂��B�ύX�ɂ�root�����ňȉ��̃R�}���h�����s���܂��B
-
- # dpkg-reconfigure console-setup
-
-�L�[�{�[�h���f���Ɣz�u�̎���͈ȉ��̂悤�ɓ����܂��B���̑��̎����
-Enter�L�[�Ő�ɐi�߂č\���܂���B
-
-�@�L�[�{�[�h���f��: ACPI Standard
-�@�L�[�{�[�h�̔z�u: Japan
-
-���� /etc/default/console-setup ��ύX���Ă����܂��܂���B
-
-�@XKBMODEL="acpi"
-�@XKBLAYOUT="jp"
+SidのSecurity Fixは通常のリポジトリにアップロードされるので、　
+security.debian.orgのリポジトリは用意されていません。
+「続ける」を選択して、そのままインストールを続行してください。
 
 ======================================================================
-�Eaptitude/Synaptic�Ń\�t�g���C���X�g�[���ł��Ȃ�
+・インストール直後、キーボードが英語キーボード配列になっている
 ======================================================================
-�����ݒ�ł̓��|�W�g���������ɂȂ��Ă��܂��B
-/etc/apt/sources.list�Ɉȉ��̃��|�W�g����ǉ����Ă��������B
+手動で変更してください。
+
+GUIからはGNOMEメニューの[システム]>[設定]>[キーボード]を開き、[レイア　
+ウト]タブのキーボードの形式などを以下のように変更してください。
+
+　キーボードの形式: ACPI Standard
+　レイアウト: Japan / デフォルトにチェック
+
+ターミナルから変更するには、dpkg-reconfigureを使って
+keyboard-configurationの設定を変更します。
+変更にはroot権限で以下のコマンドを実行します。
+
+ # dpkg-reconfigure keyboard-configuration
+
+キーボードモデルと配置の質問は以下のように答えます。その他の質問は
+Enterキーで先に進めて構いません。
+
+　キーボードモデル: ACPI Standard
+　キーボードの配置: Japan
+
+直接 /etc/default/console-setup を変更してもかまいません。
+
+　XKBMODEL="acpi"
+　XKBLAYOUT="jp"
+
+======================================================================
+・aptitude/Synapticでソフトをインストールできない
+======================================================================
+初期設定ではリポジトリが無効になっています。
+/etc/apt/sources.listに以下のリポジトリを追加してください。
 
 deb http://cdn.debian.net/debian/ sid main contrib non-free
 deb-src http://cdn.debian.net/debian/ sid main contrib non-free
 
-����)
-�ESid�͈��4��p�b�P�[�W�̍X�V������܂��B
-�E�A�b�v�f�[�g�������Ă��A�A�b�v�f�[�g�ɕK�v�ȃp�b�P�[�W�����ׂđ���
-�@�čX�V�����Ƃ͌���܂���B
+注意)
+・Sidは一日4回パッケージの更新があります。
+・アップデートがあっても、アップデートに必要なパッケージがすべて揃っ
+　て更新されるとは限りません。
 
 
-Debian Live�̃J�X�^�}�C�Y�ɂ���
+Debian Liveのカスタマイズについて
 ----------------------------------------------------------------------
-github�ɂ���live-helper�̃��V�s�𗘗p����Debian Live DVD�J�X�^�}�C�Y��
-�邱�Ƃ��ł��܂��B
+githubにあるlive-helperのレシピを利用してDebian Live DVDカスタマイズす
+ることができます。
 
-�J�X�^�}�C�Y�������Ȃ��ɂ�Linux��ō�Ƃ�����K�v������܂����ALive
-DVD�ォ����J�X�^�}�C�Y�͉\�ł��̂ŁA�����̂�����̓`�������W���Ă݂�
-���������B
+カスタマイズをおこなうにはLinux上で作業をする必要がありますが、Live
+DVD上からもカスタマイズは可能ですので、興味のある方はチャレンジしてみた
+ください。
 
-�J�X�^�}�C�Y�ɂ�10GB���x�̕ۑ��̈悪�K�v�ɂȂ�̂ŁAUSB�ڑ�HDD�Ȃǂ�p
-�ӂ��ĕۑ��̈���m�ۂ���K�v������܂��B
+カスタマイズには10GB程度の保存領域が必要になるので、USB接続HDDなどを用
+意して保存領域を確保する必要があります。
 
-�r���h�̕��@�́A�ȉ��̃R�}���h�ɂ��r���h���邱�Ƃ��ł��܂��B
+ビルドの方法は、以下のコマンドによりビルドすることができます。
 
  $ git clone git://github.com/nogajun/debian-study-live-cd.git
  $ cd debian-study-live-cd
  $ make
 
-live-helper�̐ݒ�ɂ��ẮADebian Live�̃T�C�g������̂���Ԃł����A
-���{��̎����ł́A�M�҂��֐�Debian�׋���ɂĔ��\��������������̂ŁA��
-����Q�l�ɂ���Ƃ悢�ł��傤�B
+live-helperの設定については、Debian Liveのサイトを見るのが一番ですが、
+日本語の資料では、筆者が関西Debian勉強会にて発表した資料があるので、そ
+れを参考にするとよいでしょう。
 
-�֐�Debian�׋���@����
-KansaiDebianMeetingArchives�̓Y�t�t�@�C��:debianmeetingresume200906-kansai.pdf - Debian Wiki
+関西Debian勉強会　資料
+KansaiDebianMeetingArchivesの添付ファイル:debianmeetingresume200906-kansai.pdf - Debian Wiki
 http://tokyodebian.alioth.debian.org/pdf/debianmeetingresume200906-kansai.pdf
 
-nogajun's debian-study-live-cd at master �\ GitHub
+nogajun's debian-study-live-cd at master — GitHub
 http://github.com/nogajun/debian-study-live-cd/
 
-DebianLive - Debian Wiki (�p��)
+DebianLive - Debian Wiki (英語)
 http://wiki.debian.org/DebianLive
 
-Debian Live Manual (�p��)
+Debian Live Manual (英語)
 http://alioth.debian.org/~lamby-guest/live-manual/html/
   
 
-Debian�׋���̂��m�点
+Debian勉強会のお知らせ
 ----------------------------------------------------------------------
-Debian�׋���Ƃ́ADebian�̊J���҂ɂȂ�邱�Ƃ��Ђ����ɖ����郆�[�U����
-�ƁA���鎞�ɂ͂����D�����菕�������A�܂����鎞�ɂ͌��������B���シ��
-Debian�J���҂炪Face to Face��Debian GNU/Linux�̂��܂��܂ȃg�s�b�N�i�V
-�����p�b�P�[�W�ADebian���L�̋@�\�̎d�g�ɂ��āADebian�E�G�ŋN�������o
-�����Aetc�j�ɂ��Č�荇���C�x���g�ł��B
+Debian勉強会とは、Debianの開発者になれることをひそかに夢見るユーザたち
+と、ある時にはそれを優しく手助けをし、またある時には厳しく叱咤激励する
+Debian開発者らがFace to FaceでDebian GNU/Linuxのさまざまなトピック（新
+しいパッケージ、Debian特有の機能の仕組について、Debian界隈で起こった出
+来事、etc）について語り合うイベントです。
 
-�����A�֓��A�֐��ŊJ����Ă���̂ŁADebian�̊J���ɋ����̂�����́A����
-���Q�����������B
+毎月、関東、関西で開かれているので、Debianの開発に興味のある方は、ぜひ
+ご参加ください。
 
-�J�Ó����ɂ��ẮADebian JP Project��Web�T�C�g�Adebian-users���[����
-�O���X�g�Amixi��Debian�R�~���j�e�B�ȂǂŃA�i�E���X����܂��B
+開催日時については、Debian JP ProjectのWebサイト、debian-usersメーリン
+グリスト、mixiのDebianコミュニティなどでアナウンスされます。
 
-�����G���ADebian�׋���
+東京エリアDebian勉強会
 http://tokyodebian.alioth.debian.org/
 
-�֐�Debian�׋���
+関西Debian勉強会
 http://wiki.debian.org/KansaiDebianMeeting
 
 Debian JP Project

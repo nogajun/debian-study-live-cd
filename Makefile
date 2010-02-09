@@ -21,7 +21,7 @@ config-lenny:
 		--distribution lenny \
 		--bootappend-live "$(BOOTOPTION_LIVE) keyb=jp" \
 		--linux-packages "linux-image-2.6 aufs-modules-2.6 squashfs-modules-2.6 loop-aes-modules-2.6" \
-		--debian-installer-gui enabled
+		--debian-installer-gui true
 
 config-sid:
 	lh config \
@@ -29,7 +29,7 @@ config-sid:
 		--bootappend-live "$(BOOTOPTION_LIVE) klayout=jp" \
 		--linux-packages "linux-image-2.6" \
 		--packages "live-installer-launcher" \
-		--debian-installer-gui disabled 
+		--debian-installer-gui false
 
 config-usb:
 	lh config \
@@ -42,13 +42,10 @@ config-iso:
 config-lxde: 
 	lh config \
 		--bootappend-install "$(BOOTOPTION_INSTALLER) desktop=lxde" \
-		--linux-flavours 486 \
 		--packages-lists "lxde" 
 
 config-gnome: 
 	lh config \
 		--bootappend-install "$(BOOTOPTION_INSTALLER) desktop=gnome" \
-		--linux-flavours 686 \
 		--packages-lists "gnome" 
-
 

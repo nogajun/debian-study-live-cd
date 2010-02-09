@@ -1,7 +1,7 @@
 #!/bin/bash -x
 set -e
 
-[ -f /usr/bin/iceweasel ] || exit 0
+[ -f "/usr/bin/iceweasel" ] || exit 0
 
 ICEWEASEL_PREFS=/etc/iceweasel/profile/prefs.js
 cat << _EOL_ >>${ICEWEASEL_PREFS}
@@ -12,7 +12,7 @@ user_pref("browser.startup.homepage", "http://www.debian.or.jp/");
 _EOL_
 
 # gnash
-if [ -f /usr/lib/gnash/libgnashplugin.so ]; then
-/usr/sbin/update-alternatives --set flash-mozilla.so /usr/lib/gnash/libgnashplugin.so
+if [ -f "/usr/lib/gnash/libgnashplugin.so" ]; then
+	/usr/sbin/update-alternatives --set flash-mozilla.so /usr/lib/gnash/libgnashplugin.so
 fi
 
