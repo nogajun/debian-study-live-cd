@@ -9,7 +9,7 @@ Debian JP Project
 ======================================================================
 
 
-始めに／追加情報など
+はじめに／追加情報など
 ----------------------------------------------------------------------
 Debian Live DVD制作後の追加情報や訂正は以下のURIにてアナウンスされます。
 この文書とあわせてお読みください。
@@ -29,26 +29,28 @@ http://wiki.debian.org/KansaiDebianMeeting20100313
 
 Debian Liveについて
 ----------------------------------------------------------------------
-
 このDVDは、Debian Live Projectのlive-helper Snapshotを用いて制作された
 Debian LiveとDebian Live InstallerのハイブリッドDVDです。
 
-　・Debian GNU/Linux Sid/Unstable (2010/02/09)
-　・live-helper/live-initramfs Snapshot (2.0~a6+20100131.132048)
+Debian Unstable(Sid)ベースで作られ、手軽にDebianの最新環境を試せるよう
+になっています。
+
+　・Debian GNU/Linux Sid/Unstable
+　・live-helper/live-initramfs
 　・Debian Live Installer
 　・Live Installer Launcher
 
-手軽にDebianの最新環境を試せるように、Debian Unstable(Sid)ベースで作ら
-れています。
+インストーラにはDebian Live Installerを使用し、Debian LiveのSid
+(Unstable)環境をそのままハードディスクにインストールできます。
 
-インストーラにはDebian Live Installerを使用しているので、Debian Live環
-境をそのままハードディスクにインストールできます。
+今回、実験的にDebian Live上からDebian Installerを起動してDebianをハード
+ディスクにインストールする、Live Installer Laucherを収録しました。
 
-今回実験的にDebian Live上からDebian Installerを起動してハードディスクに
-Debianをインストールできる、Live Installer Laucherを収録しました。
+Live Installer Laucherは開発が始まったばかりで、実用的ではありませんが、
+興味のある方は試してみてください。
 
-2009年秋に配布したDebian Live収録のOpenStreetMapアプリ、TeX環境、仮想化
-環境は外しています。
+2009年秋以前に配布したDebian Live収録のOpenStreetMapアプリ、TeX環境、仮
+想化環境は今回は収録していません。ご了承ください。
 
 収録パッケージの詳細についてはDVD内のlive/packages.txtをご覧ください。
 
@@ -73,80 +75,17 @@ DVDの差分をUSBメモリに保存する
 ----------------------------------------------------------------------
 Debian Liveは、起動時に「live-rw」もしくは「home-rw」というラベル名の
 ext2/3パーティションをみつけると自動的にマウントし、DVDの差分を保存しま
-す。(live-rwは/(ルート)ディレクトリ全体を、home-rwはhomeディレクトリを
-保存します。)
+す。
 
-ここではUSBメモリにDVDの差分を保存するための方法を説明します。
-
-用意するもの:
-　・Debian Live DVD
-　・USBメモリ
-
-1. DVDを起動しUSBメモリをセットする。
-
-USBメモリなどリムーバブルデバイスをセットすると自動的にマウントされてし
-まうので、アンマウントしておきます。
-
-アンマウントの方法は、マウントされたデバイスアイコン上のコンテキストメ
-ニュー(マウス右クリックメニュー)から、「アンマウント」を選びます。
-
-2. 保存パーティションの作成
-
-「live-rw」もしくは「home-rw」というラベル名で、ext3パーティションを作
-成します。作成方法はGUIでもターミナル、どちらでも構いません。
-
-2.a. GUI(gparted)からパーティション作成
-
-GNOMEメニューの[設定]>[システム管理]>[GParted] からGPartedを起動します。
-
-右上のプルダウンメニューからUSBメモリを選び、パーティションを削除(もし
-くはリサイズ)します。USBメモリをWindowsと共用にする場合は、FAT領域を適
-当なサイズに縮小し、後半に保存領域を作成します。
-
-空いた領域に「live-rw」もしくは「home-rw」というラベル名でext3パーティ
-ションを作成をします。
-
-2.b. ターミナルからパーティション作成
-
-ターミナルから作業をおこなう場合はroot権限が必要になるので、通常の端末
-ではsudo -sでrootになるか、GNOMEメニューの[アプリケーション]>[アクセサ
-リ]>[システムターミナル・スーパーユーザー]を利用します。
-
-/dev/sdXnはUSBメモリのデバイスファイル名です(Xはアルファベット、nはパー
-ティション番号)。dmesgの内容を確認した上で自分の環境に合わせて適宜読み
-替えてください。
-
- パーティションを確認する。
-
- # fdisk -l
-
-　cfdisk(またはfdisk)でパーティションを作成します。
-
- # cfdisk /dev/sdX
-
-　「live-rw」というラベル名でext3でフォーマットします。
-
- # mkfs.ext3 -L live-rw /dev/sdXn
-
-　tune2fsでfsckをしないようにしておくといいでしょう。
-　ジャーナリングのための予約領域を通常5%から減らしたい場合は-mオプショ
-ンを使って指定します。-Lオプションはラベル名の指定です。
-
- # tune2fs -i0 -c0 -m 3 -L live-rw/dev/sdXn 
-
-3. DVDを再起動して確認する
-　USBメモリを差したままDVDを起動します。
-　起動してUSBメモリのパーティションが/live/cowディレクトリにマウントさ
-れていれば、差分保存ができます。　
+live-rwは/(ルート)ディレクトリ全体を、home-rwはhomeディレクトリを保存し
+ます。
 
 
 よくある質問
 ----------------------------------------------------------------------
-
 ・ログイン画面に戻ってしまいました
-
-10秒待つと自動的にログインします。
-すぐにログインしたい場合の、ユーザー名とパスワードは以下です。
+　10秒待つと自動的にログインします。
+　すぐにログインする場合のユーザー名とパスワードは以下のとおりです。
 
 　ユーザー名: user
 　パスワード: live
@@ -155,38 +94,54 @@ GNOMEメニューの[設定]>[システム管理]>[GParted] からGPartedを起�
 
  $ sudo <コマンド> 
 
-を使います。ほかには
-
- * Root Terminal を開く
- * sudo -s コマンドでrootになる 
-
-が、あります。 
+　を使います。ほかには
+　 * 「システムターミナル・スーパーユーザーモード」を開く
+　 * コマンド「sudo -s」を使ってrootになる 
+　が、あります。 
 
 
 Debian Live Installer Launcher
 ----------------------------------------------------------------------
-
 !! 注意 !!
-**************************************************************
-** Live Installer Laucher は実験的に収録しています!!        **
-** Debian GNU/Linux Sid(不安定版)環境がインストールされます **
-**************************************************************
+・Live Installer Laucher は実験的に収録しています
+　まだ不具合があると思うので自己責任でご利用ください。
+
+現在判明している不具合
+・GUIインストーラは、まだサポートされていません。
+　現時点ではGUIインストーラはサポートされていないので、Debian
+Installer ModeではText InstallかText Expertを選択してください。
+
+・インストーラで日本語が表示されない/日本語でインストールができない
+　よく調べていませんが、現在のところ英語しか使えません。
+
+簡易インストールマニュアル
+ * 「Select Language」は C
+ * 「Select your location」は Asia - Japan
+ * 「Select a keyboard layout」は日本語キーボードの場合 Japanese 
+Load installer components from CDの「Continue the install without loading kernel module?」はYes
+ * 「Configure the network」はネットワークの設定
+ * 「Partition disks」ではパーティションの設定
+ * 「Set up users and passwords」ではrootとuserの設定。
+ * 「Install the GRUB boot loader」では「Installation step failed」と出ますがContinueして、「Install the GRUB boot loader on a hard disk」を選択します。
+ * 「Configuring grub-pc」の「Install the GRUB boot loader to the master boot record?」はマスターブートレコード(MBR)にGRUBをインストールするかと尋ねています。
+ * 「Finish the installation」はContinueののち、Debian Installer main menu で、「Exit installer」を選択して終了
+
+======================================================================
+・日本語環境にするにはどうしたらいいですか?
+======================================================================
+ /etc/default/locale を LANG="ja_JP.UTF-8" に設定してください。
 
 
-
-
+----------------------------------------------------------------------
 Debian Live Installer
 ----------------------------------------------------------------------
-
 !! 注意 !!
-**************************************************************
-** このインストーラは通常のDebian Installerではありません!! **
-** Debian GNU/Linux Sid(不安定版)環境がインストールされます **
-**************************************************************
+・このインストーラは通常のDebian Installerではありません!!
+・Debian GNU/Linux Sid(不安定版)環境がインストールされます
 
 Debian Live InstallerはDebian Live DVDの内容をそのままハードディスクに
-インストールします。これを利用して、手軽にunstableの環境をハードディス
-クにインストールすることができます。
+インストールします。これを利用して、手軽にunstable環境をハードディスク
+にインストールすることができます。
 
 インストーラの起動は、DVDを起動してメニューから「Install Text」を選択し
 ます。
@@ -194,7 +149,6 @@ Debian Live InstallerはDebian Live DVDの内容をそのままハードディ�
 インストール作業のおおまかな流れは、「言語とキーボードを指定」→「パー
 ティションの作成」→「ルートパスワードとユーザーの作成」→「GRUBのイン
 ストール」になります。
-
 
 ======================================================================
 ・インストール時「パッケージマネージャの設定」で「リポジトリにアクセス
@@ -227,7 +181,7 @@ Enterキーで先に進めて構いません。
 　キーボードモデル: ACPI Standard
 　キーボードの配置: Japan
 
-直接 /etc/default/console-setup を変更してもかまいません。
+直接/etc/default/keyboard を変更してもかまいません。
 
 　XKBMODEL="acpi"
 　XKBLAYOUT="jp"
@@ -235,16 +189,12 @@ Enterキーで先に進めて構いません。
 ======================================================================
 ・aptitude/Synapticでソフトをインストールできない
 ======================================================================
-初期設定ではリポジトリが無効になっています。
+Live Installerの初期設定ではリポジトリが無効になっています。
 /etc/apt/sources.listに以下のリポジトリを追加してください。
 
 deb http://cdn.debian.net/debian/ sid main contrib non-free
 deb-src http://cdn.debian.net/debian/ sid main contrib non-free
 
-注意)
-・Sidは一日4回パッケージの更新があります。
-・アップデートがあっても、アップデートに必要なパッケージがすべて揃っ
-　て更新されるとは限りません。
 
 
 Debian Liveのカスタマイズについて
@@ -268,6 +218,7 @@ DVD上からもカスタマイズは可能ですので、興味のある方は�
 live-helperの設定については、Debian Liveのサイトを見るのが一番ですが、
 日本語の資料では、筆者が関西Debian勉強会にて発表した資料があるので、そ
 れを参考にするとよいでしょう。
+
 
 関西Debian勉強会　資料
 KansaiDebianMeetingArchivesの添付ファイル:debianmeetingresume200906-kansai.pdf - Debian Wiki

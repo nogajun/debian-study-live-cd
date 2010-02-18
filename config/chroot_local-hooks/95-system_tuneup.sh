@@ -20,6 +20,9 @@ done
 # set usplash
 #update-alternatives --set usplash-artwork.so /usr/lib/usplash/CrunchyBranch.so
 
+# update command-not-found
+[ -f "/usr/sbin/update-command-not-found" ] && /usr/sbin/update-command-not-found
+
 # remove packages
 apt-get -y clean 
 #apt-get -y autoremove 

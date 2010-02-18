@@ -1,6 +1,6 @@
-#BOOTOPTION_LIVE = quiet locale=ja_JP.UTF-8 kmodel=acpi vga=788 video=uvesafb:ywrap,mtrr utc=no tz=Asia/Tokyo splash persistent
 BOOTOPTION_LIVE = quiet locale=ja_JP.UTF-8 kmodel=acpi utc=no tz=Asia/Tokyo persistent
 BOOTOPTION_INSTALLER = -- locale=ja_JP.UTF-8
+#BOOTOPTION_LIVE = quiet locale=ja_JP.UTF-8 kmodel=acpi vga=788 video=uvesafb:ywrap,mtrr utc=no tz=Asia/Tokyo splash persistent
 #BOOTOPTION_INSTALLER = -- quiet locale=ja_JP.UTF-8 kmodel=jp106 vga=788 video=vesa:ywrap,mtrr utc=no tz=Asia/Tokyo
 
 build: clean config-sid config-iso config-gnome
