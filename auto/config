@@ -1,22 +1,25 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://cdn.debian.net/debian/"
+MIRROR_DEBIAN="http://ftp.jp.debian.org/debian/"
+#MIRROR_DEBIAN="http://cdn.debian.net/debian/"
 MIRROR_SECURITY="http://security.geo.debian.org/"
+MIRROR_BOOTSTRAP="http://snapshot.debian.org/archive/debian/20100501T040743Z/"
 
-lh config noautoconfig \
+lh config noauto \
 	--apt-recommends false \
 	--archive-areas "main" \
 	--bootloader syslinux \
 	--debian-installer live \
-	--debian-installer-distribution daily \
+	--debian-installer-distribution squeeze \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
 	--language ja \
 	--mirror-binary ${MIRROR_DEBIAN} \
 	--mirror-binary-security ${MIRROR_SECURITY} \
-	--mirror-bootstrap ${MIRROR_DEBIAN} \
+	--mirror-bootstrap ${MIRROR_BOOTSTRAP} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
+	--volatile false \
 	--syslinux-menu vesamenu \
 	--syslinux-timeout 15 \
-    --linux-flavours 486 \
+	--linux-flavours 486 \
 	${@}

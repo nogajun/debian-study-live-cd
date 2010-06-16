@@ -2,7 +2,7 @@
 
 BUILDDATE=`date +%Y%m%d%H%M%S`
 # sudo MKSQUASHFS_OPTIONS="-b 1024k" lh build 2>&1 | tee debian_live-binary-${BUILDDATE}.buildlog
-lh build noautoconfig 2>&1 | tee debian_live-binary-${BUILDDATE}.buildlog
+lh build noauto 2>&1 | tee debian_live-binary-${BUILDDATE}.buildlog
 # rename files
 if [ -f binary.iso ]; then
     mv binary.iso debian_live-binary-${BUILDDATE}.iso

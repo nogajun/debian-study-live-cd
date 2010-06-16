@@ -25,11 +25,12 @@ config-lenny:
 
 config-sid:
 	lh config \
-		--distribution sid \
+		--distribution squeeze \
 		--bootappend-live "$(BOOTOPTION_LIVE) klayout=jp" \
 		--linux-packages "linux-image-2.6" \
-		--packages "live-installer-launcher" \
-		--debian-installer-gui false
+		--packages "live-installer-launcher bootchart bootchart-view acct" \
+		--debian-installer-gui true \
+		--win32-loader false
 
 config-usb:
 	lh config \
