@@ -1,25 +1,37 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://ftp.jp.debian.org/debian/"
-#MIRROR_DEBIAN="http://cdn.debian.net/debian/"
+MIRROR_DEBIAN="http://cdn.debian.net/debian/"
 MIRROR_SECURITY="http://security.geo.debian.org/"
-MIRROR_BOOTSTRAP="http://snapshot.debian.org/archive/debian/20100501T040743Z/"
+MIRROR_BOOTSTRAP=${MIRROR_DEBIAN}
+MIRROR_VOLATILE=${MIRROR_DEBIAN}
+
+DISTRIBUTION="squeeze"
 
 lb config noauto \
-	--apt-recommends false \
+	--apt-recommends true \
 	--archive-areas "main" \
+	--backports false \
+	--binary-images iso-hybrid \
 	--bootloader syslinux \
 	--debian-installer live \
-	--debian-installer-distribution squeeze \
+	--debian-installer-distribution ${DISTRIBUTION} \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
-	--language ja \
+	--linux-flavours 486 \
 	--mirror-binary ${MIRROR_DEBIAN} \
 	--mirror-binary-security ${MIRROR_SECURITY} \
+	--mirror-binary-volatile ${MIRROR_VOLATILE} \
 	--mirror-bootstrap ${MIRROR_BOOTSTRAP} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
+	--mirror-chroot-volatile ${MIRROR_VOLATILE} \
+	--security true \
+	--syslinux-timeout 10 \
+	--tasks "japanese japanese-desktop japanese-gnome-desktop" \
+	--tasksel aptitude \
 	--volatile false \
-	--syslinux-menu vesamenu \
-	--syslinux-timeout 15 \
-	--linux-flavours 486 \
+	--win32-loader true \
+	-d ${DISTRIBUTION} \
+	-l ja \
+	-p "gnome-full rescue" \
+	-r live.debian.net \
 	${@}

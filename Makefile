@@ -1,6 +1,6 @@
-all: clean config build
+all: build
 
-config:
+config: clean
 	lb config
 
 build: clean config
