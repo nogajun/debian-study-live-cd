@@ -1,52 +1,15 @@
-BOOTOPTION_LIVE = quiet locale=ja_JP.UTF-8 kmodel=acpi utc=no tz=Asia/Tokyo persistent
-BOOTOPTION_INSTALLER = -- locale=ja_JP.UTF-8
-#BOOTOPTION_LIVE = quiet locale=ja_JP.UTF-8 kmodel=acpi vga=788 video=uvesafb:ywrap,mtrr utc=no tz=Asia/Tokyo splash persistent
-#BOOTOPTION_INSTALLER = -- quiet locale=ja_JP.UTF-8 kmodel=jp106 vga=788 video=vesa:ywrap,mtrr utc=no tz=Asia/Tokyo
+all: clean config build
 
-build: clean config-sid config-iso config-gnome
-	sudo lh build
+config:
+	lb config
 
-build-usb: clean config-sid config-usb config-gnome
-	sudo lh build
+build: clean config
+	sudo lb build
 
 clean:
-	sudo lh clean
+	sudo lb clean
 
 distclean: clean
-	sudo lh clean --purge
+	sudo lb clean --purge
 	sudo rm -f *.iso *.img *.list *.packages *.buildlog *.md5sum
-
-config-lenny:
-	lh config \
-		--distribution lenny \
-		--bootappend-live "$(BOOTOPTION_LIVE) keyb=jp" \
-		--linux-packages "linux-image-2.6 aufs-modules-2.6 squashfs-modules-2.6 loop-aes-modules-2.6" \
-		--debian-installer-gui true
-
-config-sid:
-	lh config \
-		--distribution squeeze \
-		--bootappend-live "$(BOOTOPTION_LIVE) klayout=jp" \
-		--linux-packages "linux-image-2.6" \
-		--packages "live-installer-launcher bootchart bootchart-view acct" \
-		--debian-installer-gui true \
-		--win32-loader false
-
-config-usb:
-	lh config \
-		--binary-images usb-hdd \
-		--binary-filesystem fat32
-
-config-iso: 
-	lh config --binary-images iso 
-
-config-lxde: 
-	lh config \
-		--bootappend-install "$(BOOTOPTION_INSTALLER) desktop=lxde" \
-		--packages-lists "lxde" 
-
-config-gnome: 
-	lh config \
-		--bootappend-install "$(BOOTOPTION_INSTALLER) desktop=gnome" \
-		--packages-lists "gnome" 
 

@@ -4,19 +4,6 @@ set -e
 # disable console tty2,tty3,tty4,tty5,tty6
 sed -i 's/^[23456]/#\ &/' /etc/inittab
 
-# enable parallel init script
-#sed -i 's/^CONCURRENCY=none/CONCURRENCY=makefile/' /etc/init.d/rc
-
-# remove daemon
-DAEMON="apache2 acct cron clamav-freshclam exim4 hdparm lm-semsors partimaged portmap pppd-dns rsync rsyslog smartmontools saned ssh timidity samba mdadm vbesave mdadm-raid lvm2 kvm libvirt-bin"
-for i in ${DAEMON}; do
-    [ -f "/etc/init.d/${i}" ] && update-rc.d ${i} disable S 2
-done
-#for i in ${DAEMON}; do update-rc.d -f ${i} remove; done
-
-# set insserv
-#[ -f "/sbin/insserv" ] && update-bootsystem-insserv
-
 # set usplash
 #update-alternatives --set usplash-artwork.so /usr/lib/usplash/CrunchyBranch.so
 

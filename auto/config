@@ -5,7 +5,7 @@ MIRROR_DEBIAN="http://ftp.jp.debian.org/debian/"
 MIRROR_SECURITY="http://security.geo.debian.org/"
 MIRROR_BOOTSTRAP="http://snapshot.debian.org/archive/debian/20100501T040743Z/"
 
-lh config noauto \
+lb config noauto \
 	--apt-recommends false \
 	--archive-areas "main" \
 	--bootloader syslinux \
