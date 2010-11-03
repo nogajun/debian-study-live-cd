@@ -7,7 +7,7 @@ lb build noauto 2>&1 | tee debian_live-binary-${BUILDDATE}.buildlog
 if [ -f binary.iso ]; then
     mv binary.iso debian_live-binary-${BUILDDATE}.iso
 elif [ -f binary-hybrid.iso ]; then
-    mv binary.img debian_live-binary-${BUILDDATE}-hybrid.iso
+    mv binary-hybrid.iso debian_live-binary-${BUILDDATE}-hybrid.iso
 elif [ -f binary.img ]; then
     mv binary.img debian_live-binary-${BUILDDATE}.img
 fi

@@ -26,12 +26,11 @@ lb config noauto \
 	--mirror-chroot-volatile ${MIRROR_VOLATILE} \
 	--security true \
 	--syslinux-timeout 10 \
-	--tasks "japanese japanese-desktop japanese-gnome-desktop" \
+	--tasks "japanese japanese-desktop japanese-gnome-desktop gnome desktop laptop" \
 	--tasksel aptitude \
 	--volatile false \
 	--win32-loader true \
 	-d ${DISTRIBUTION} \
 	-l ja \
-	-p "gnome-full rescue" \
 	-r live.debian.net \
 	${@}
