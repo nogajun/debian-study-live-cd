@@ -8,6 +8,8 @@ if [ -f binary.iso ]; then
     mv binary.iso debian_live-binary-${BUILDDATE}.iso
 elif [ -f binary-hybrid.iso ]; then
     mv binary-hybrid.iso debian_live-binary-${BUILDDATE}-hybrid.iso
+elif [ -f binary-net.tar.gz ]; then
+    mv binary-net.tar.gz debian_live-binary-${BUILDDATE}-net.tar.gz
 elif [ -f binary.img ]; then
     mv binary.img debian_live-binary-${BUILDDATE}.img
 fi
