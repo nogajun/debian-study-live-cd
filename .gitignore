@@ -1,7 +1,6 @@
 *.buildlog
 *.img
 *.iso
-*.list
 *.md5sum
 *.packages
 *~
@@ -16,3 +15,4 @@ config/bootstrap
 config/chroot
 config/common
 config/source
+debian_live-binary-*.list

@@ -1,0 +1,24 @@
+gparted
+dmraid jfsutils kpartx reiser4progs reiserfsprogs xfsprogs
+fsarchiver
+testdisk
+parted partimage partimage-server
+deja-dup
+
+clamtk cabextract
+
+debian-installer-launcher
+xserver-xorg-input-kbd
+xserver-xorg-input-mouse
+xserver-xorg-input-vmmouse
+xserver-xorg-video-radeonhd
+xserver-xfbdev
+
+compiz compiz-fusion-plugins-main compizconfig-settings-manager fusion-icon
+
+openoffice.org-gnome
+
+nautilus-share
+gvfs-fuse 
+
+unetbootin unetbootin-translations

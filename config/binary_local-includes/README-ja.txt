@@ -1,7 +1,7 @@
 ======================================================================
 
-Debian Live DVD (Sid) / Debian Live Installer (Sid)
-オープンソースカンファレンス 2010 February/March
+Debian Live DVD (Squeeze) / Debian Live Installer (Squeeze)
+関西オープンソース 2010
 
 のがたじゅん <nogajun@debian.or.jp>
 Debian JP Project
@@ -13,9 +13,10 @@ Debian JP Project
 ----------------------------------------------------------------------
 Debian Live DVD制作後の追加情報や訂正は以下のURIにてアナウンスされます。
 この文書とあわせてお読みください。
-http://wiki.debian.org/KansaiDebianMeeting20100313
+http://wiki.debian.org/KansaiDebianMeeting20101005-06
 
 
+----------------------------------------------------------------------
 目次
 ----------------------------------------------------------------------
 + Debian Liveについて
@@ -23,38 +24,38 @@ http://wiki.debian.org/KansaiDebianMeeting20100313
   2. DVDの差分をUSBメモリに保存する 
   3. よくある質問
   4. Debian Live Installer
+  5. USBメモリにインストールする
 + Debian Liveのカスタマイズ
 + Debian勉強会のお知らせ
 
 
+----------------------------------------------------------------------
 Debian Liveについて
 ----------------------------------------------------------------------
-このDVDは、Debian Live Projectのlive-helper Snapshotを用いて制作された
-Debian LiveとDebian Live InstallerのハイブリッドDVDです。
+このDVDは、Debian Live Projectのlive-buildを用いて制作されたDebian
+LiveとDebian Live InstallerのハイブリッドDVDです。
 
-Debian Unstable(Sid)ベースで作られ、手軽にDebianの最新環境を試せるよう
-になっています。
+Debian Testing(Squeeze)ベースで作られ、手軽にDebianテスト版の最新環境
+を試せるようになっています。
 
-　・Debian GNU/Linux Sid/Unstable
-　・live-helper/live-initramfs
+　・Debian GNU/Linux Squeeze/Testing
+　・live-build/live-boot/live-config
 　・Debian Live Installer
 　・Live Installer Launcher
 
-インストーラにはDebian Live Installerを使用し、Debian LiveのSid
-(Unstable)環境をそのままハードディスクにインストールできます。
+インストーラにはDebian Live Installerを使用し、Debian Liveの
+Squeeze(Testing)環境をそのままハードディスクにインストールできます。
 
-今回、実験的にDebian Live上からDebian Installerを起動してDebianをハード
+今回も実験的にDebian Live上からDebian Installerを起動してDebianをハード
 ディスクにインストールする、Live Installer Laucherを収録しました。
 
-Live Installer Laucherは開発が始まったばかりで、実用的ではありませんが、
-興味のある方は試してみてください。
-
-2009年秋以前に配布したDebian Live収録のOpenStreetMapアプリ、TeX環境、仮
-想化環境は今回は収録していません。ご了承ください。
+Live Installer Launcherには表示の不具合があるので、ご利用になるかたは、
+Live Installer Launcherの項目もご覧ください。
 
 収録パッケージの詳細についてはDVD内のlive/packages.txtをご覧ください。
 
 
+----------------------------------------------------------------------
 Live DVDとして使う
 ----------------------------------------------------------------------
 Debian Liveを起動するにはメニューの「Live」を選択します。
@@ -71,6 +72,7 @@ Debian Liveを起動するにはメニューの「Live」を選択します。
 パラメータの詳細については、DVDのlive/parameters.txtをご覧ください。
 
 
+----------------------------------------------------------------------
 DVDの差分をUSBメモリに保存する
 ----------------------------------------------------------------------
 Debian Liveは、起動時に「live-rw」もしくは「home-rw」というラベル名の
@@ -100,74 +102,41 @@ live-rwは/(ルート)ディレクトリ全体を、home-rwはhomeディレク�
 　が、あります。 
 
 
+----------------------------------------------------------------------
 Debian Live Installer Launcher
 ----------------------------------------------------------------------
 !! 注意 !!
 ・Live Installer Laucher は実験的に収録しています
 　まだ不具合があると思うので自己責任でご利用ください。
 
-現在判明している不具合
-・GUIインストーラは、まだサポートされていません。
-　現時点ではGUIインストーラはサポートされていないので、Debian
-Installer ModeではText InstallかText Expertを選択してください。
+・現在判明している不具合
+Live Install Launcherを起動すると、インストーラ画面が切れます。
 
-・インストーラで日本語が表示されない/日本語でインストールができない
-　よく調べていませんが、現在のところ英語しか使えません。
-
-簡易インストールマニュアル
- * 「Select Language」は C
- * 「Select your location」は Asia - Japan
- * 「Select a keyboard layout」は日本語キーボードの場合 Japanese 
-Load installer components from CDの「Continue the install without loading kernel module?」はYes
- * 「Configure the network」はネットワークの設定
- * 「Partition disks」ではパーティションの設定
- * 「Set up users and passwords」ではrootとuserの設定。
- * 「Install the GRUB boot loader」では「Installation step failed」と出ますがContinueして、「Install the GRUB boot loader on a hard disk」を選択します。
- * 「Configuring grub-pc」の「Install the GRUB boot loader to the master boot record?」はマスターブートレコード(MBR)にGRUBをインストールするかと尋ねています。
- * 「Finish the installation」はContinueののち、Debian Installer main menu で、「Exit installer」を選択して終了
-
-======================================================================
-・日本語環境にするにはどうしたらいいですか?
-======================================================================
- /etc/default/locale を LANG="ja_JP.UTF-8" に設定してください。
+回避方法としては、上下パネルを隠すとボタンが見えるようになるので、パネ
+ルの上でコンテキストメニューを表示し[プロパティ]を選択。「自動的に隠す」
+にチェックを入れる。を上下のパネルの上でおこなってください。
 
 
 ----------------------------------------------------------------------
 Debian Live Installer
 ----------------------------------------------------------------------
 !! 注意 !!
-・このインストーラは通常のDebian Installerではありません!!
-・Debian GNU/Linux Sid(不安定版)環境がインストールされます
+・Debian GNU/Linux Squeeze(Testing)環境がインストールされます
 
 Debian Live InstallerはDebian Live DVDの内容をそのままハードディスクに
-インストールします。これを利用して、手軽にunstable環境をハードディスク
-にインストールすることができます。
+インストールします。
 
-インストーラの起動は、DVDを起動してメニューから「Install Text」を選択し
-ます。
+インストーラの起動は、DVDを起動して「GUI Install」もしくは「Text
+Install」を選択します。
 
 インストール作業のおおまかな流れは、「言語とキーボードを指定」→「パー
 ティションの作成」→「ルートパスワードとユーザーの作成」→「GRUBのイン
 ストール」になります。
 
 ======================================================================
-・インストール時「パッケージマネージャの設定」で「リポジトリにアクセス
-  できません」というエラーが出る
+・キーボードが英語キーボード配列になっている
 ======================================================================
-SidのSecurity Fixは通常のリポジトリにアップロードされるので、　
-security.debian.orgのリポジトリは用意されていません。
-「続ける」を選択して、そのままインストールを続行してください。
-
-======================================================================
-・インストール直後、キーボードが英語キーボード配列になっている
-======================================================================
-手動で変更してください。
-
-GUIからはGNOMEメニューの[システム]>[設定]>[キーボード]を開き、[レイア　
-ウト]タブのキーボードの形式などを以下のように変更してください。
-
-　キーボードの形式: ACPI Standard
-　レイアウト: Japan / デフォルトにチェック
+GDM3のログイン画面で日本語キーボードを選択してください。
 
 ターミナルから変更するには、dpkg-reconfigureを使って
 keyboard-configurationの設定を変更します。
@@ -178,12 +147,12 @@ keyboard-configurationの設定を変更します。
 キーボードモデルと配置の質問は以下のように答えます。その他の質問は
 Enterキーで先に進めて構いません。
 
-　キーボードモデル: ACPI Standard
+　キーボードモデル: Generic 104-key PC
 　キーボードの配置: Japan
 
 直接/etc/default/keyboard を変更してもかまいません。
 
-　XKBMODEL="acpi"
+　XKBMODEL="jp106"
 　XKBLAYOUT="jp"
 
 ======================================================================
@@ -192,14 +161,27 @@ Enterキーで先に進めて構いません。
 Live Installerの初期設定ではリポジトリが無効になっています。
 /etc/apt/sources.listに以下のリポジトリを追加してください。
 
-deb http://cdn.debian.net/debian/ sid main contrib non-free
-deb-src http://cdn.debian.net/debian/ sid main contrib non-free
+deb http://cdn.debian.net/debian/ squeeze main contrib non-free
+deb-src http://cdn.debian.net/debian/ squeeze main contrib non-free
 
 
+----------------------------------------------------------------------
+USBメモリにインストールする
+----------------------------------------------------------------------
 
+dd(linux)やWin32 Image Writer(Windows)などで、ISOイメージをそのままUSB
+メモリに書き込んでください。
+
+linuxの例)
+ $ sudo dd if=debian_live-binary-20101104062609-hybrid.iso of=/dev/(USBメモリのデバイス) bs=1M
+
+Image Writer for Windows:
+https://launchpad.net/win32-image-writer/+download
+
+----------------------------------------------------------------------
 Debian Liveのカスタマイズについて
 ----------------------------------------------------------------------
-githubにあるlive-helperのレシピを利用してDebian Live DVDカスタマイズす
+githubにあるlive-buildのレシピを利用してDebian Live DVDカスタマイズす
 ることができます。
 
 カスタマイズをおこなうにはLinux上で作業をする必要がありますが、Live
@@ -215,7 +197,7 @@ DVD上からもカスタマイズは可能ですので、興味のある方は�
  $ cd debian-study-live-cd
  $ make
 
-live-helperの設定については、Debian Liveのサイトを見るのが一番ですが、
+live-buildの設定については、Debian Liveのサイトを見るのが一番ですが、
 日本語の資料では、筆者が関西Debian勉強会にて発表した資料があるので、そ
 れを参考にするとよいでしょう。
 

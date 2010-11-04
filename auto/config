@@ -1,7 +1,7 @@
 #!/bin/sh
 
 MIRROR_DEBIAN="http://cdn.debian.net/debian/"
-MIRROR_SECURITY="http://security.geo.debian.org/"
+MIRROR_SECURITY="http://security.debian.org/"
 MIRROR_BOOTSTRAP=${MIRROR_DEBIAN}
 MIRROR_VOLATILE=${MIRROR_DEBIAN}
 
@@ -33,4 +33,5 @@ lb config noauto \
 	-d ${DISTRIBUTION} \
 	-l ja \
 	-r live.debian.net \
+	--syslinux-splash `pwd`/config/binary_syslinux/splash.png \
 	${@}
