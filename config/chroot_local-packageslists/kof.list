@@ -11,8 +11,10 @@ debian-installer-launcher
 xserver-xorg-input-kbd
 xserver-xorg-input-mouse
 xserver-xorg-input-vmmouse
+xserver-xorg-video-nouveau
 xserver-xorg-video-radeonhd
 xserver-xfbdev
+# libgl1-mesa-dri-experimental
 
 compiz compiz-fusion-plugins-main compizconfig-settings-manager fusion-icon
 
@@ -22,3 +24,7 @@ nautilus-share
 gvfs-fuse 
 
 unetbootin unetbootin-translations
+
+plymouth plymouth-x11 plymouth-themes-all
+
+syslinux-themes-debian

@@ -4,16 +4,21 @@ MIRROR_DEBIAN="http://cdn.debian.net/debian/"
 MIRROR_SECURITY="http://security.debian.org/"
 MIRROR_BOOTSTRAP=${MIRROR_DEBIAN}
 MIRROR_VOLATILE=${MIRROR_DEBIAN}
+MIRROR_BACKPORTS="http://backports.debian.org/debian-backports/"
 
 DISTRIBUTION="squeeze"
 ARCH="i386"
+MODE="debian"
+
+BOOTAPPEND_LIVE="splash"
 
 lb config noauto \
 	--apt-recommends true \
 	--archive-areas "main" \
 	--architecture ${ARCH} \
-	--backports false \
+	--backports true \
 	--binary-images iso-hybrid \
+	--bootappend-live ${BOOTAPPEND_LIVE} \
 	--bootloader syslinux \
 	--debian-installer live \
 	--debian-installer-distribution ${DISTRIBUTION} \
@@ -22,10 +27,13 @@ lb config noauto \
 	--mirror-binary ${MIRROR_DEBIAN} \
 	--mirror-binary-security ${MIRROR_SECURITY} \
 	--mirror-binary-volatile ${MIRROR_VOLATILE} \
+	--mirror-binary-backports ${MIRROR_BACKPORTS} \
 	--mirror-bootstrap ${MIRROR_BOOTSTRAP} \
 	--mirror-chroot ${MIRROR_DEBIAN} \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--mirror-chroot-volatile ${MIRROR_VOLATILE} \
+	--mirror-chroot-backports ${MIRROR_BACKPORTS} \
+	--mode ${MODE} \
 	--security true \
 	--tasks "japanese japanese-desktop japanese-gnome-desktop gnome desktop laptop" \
 	--tasksel aptitude \
@@ -33,7 +41,6 @@ lb config noauto \
 	--win32-loader true \
 	-d ${DISTRIBUTION} \
 	-l ja \
-	-r live.debian.net \
 	--net-root-server "192.168.10.11" \
 	--net-root-path "/srv/debian-live" \
 	${@}
