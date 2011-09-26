@@ -6,17 +6,19 @@ MIRROR_BOOTSTRAP=${MIRROR_DEBIAN}
 MIRROR_VOLATILE=${MIRROR_DEBIAN}
 
 DISTRIBUTION="squeeze"
+ARCH="i386"
 
 lb config noauto \
 	--apt-recommends true \
 	--archive-areas "main" \
+	--architecture ${ARCH} \
 	--backports false \
 	--binary-images iso-hybrid \
 	--bootloader syslinux \
 	--debian-installer live \
 	--debian-installer-distribution ${DISTRIBUTION} \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
-	--linux-flavours 486 \
+	--linux-flavours 686 \
 	--mirror-binary ${MIRROR_DEBIAN} \
 	--mirror-binary-security ${MIRROR_SECURITY} \
 	--mirror-binary-volatile ${MIRROR_VOLATILE} \
@@ -25,7 +27,6 @@ lb config noauto \
 	--mirror-chroot-security ${MIRROR_SECURITY} \
 	--mirror-chroot-volatile ${MIRROR_VOLATILE} \
 	--security true \
-	--syslinux-timeout 10 \
 	--tasks "japanese japanese-desktop japanese-gnome-desktop gnome desktop laptop" \
 	--tasksel aptitude \
 	--volatile false \
@@ -33,5 +34,6 @@ lb config noauto \
 	-d ${DISTRIBUTION} \
 	-l ja \
 	-r live.debian.net \
-	--syslinux-splash `pwd`/config/binary_syslinux/splash.png \
+	--net-root-server "192.168.10.11" \
+	--net-root-path "/srv/debian-live" \
 	${@}
