@@ -23,7 +23,7 @@ lb config noauto \
 	--debian-installer live \
 	--debian-installer-distribution ${DISTRIBUTION} \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
-	--linux-flavours 686 \
+	--linux-flavours 486 \
 	--mirror-binary ${MIRROR_DEBIAN} \
 	--mirror-binary-security ${MIRROR_SECURITY} \
 	--mirror-binary-volatile ${MIRROR_VOLATILE} \
@@ -37,7 +37,7 @@ lb config noauto \
 	--security true \
 	--tasks "japanese japanese-desktop japanese-gnome-desktop gnome desktop laptop" \
 	--tasksel aptitude \
-	--volatile false \
+	--volatile true \
 	--win32-loader true \
 	-d ${DISTRIBUTION} \
 	-l ja \
