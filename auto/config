@@ -1,6 +1,6 @@
 #!/bin/sh
 
-MIRROR_DEBIAN="http://cdn.debian.net/debian/"
+MIRROR_DEBIAN="http://ftp.jp.debian.org/debian/"
 MIRROR_SECURITY="http://security.debian.org/"
 MIRROR_BOOTSTRAP=${MIRROR_DEBIAN}
 MIRROR_VOLATILE=${MIRROR_DEBIAN}
