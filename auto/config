@@ -10,36 +10,36 @@ DISTRIBUTION="squeeze"
 ARCH="i386"
 MODE="debian"
 
-BOOTAPPEND_LIVE="splash"
+BOOTAPPEND_LIVE="persistent swapon splash"
 
 lb config noauto \
 	--apt-recommends true \
 	--archive-areas "main" \
-	--architecture ${ARCH} \
+	--architecture "${ARCH}" \
 	--backports true \
 	--binary-images iso-hybrid \
-	--bootappend-live ${BOOTAPPEND_LIVE} \
+	--bootappend-live "${BOOTAPPEND_LIVE}" \
 	--bootloader syslinux \
 	--debian-installer live \
-	--debian-installer-distribution ${DISTRIBUTION} \
+	--debian-installer-distribution "${DISTRIBUTION}" \
 	--iso-publisher "Debian JP Project; http://www.debian.or.jp/;" \
 	--linux-flavours 486 \
-	--mirror-binary ${MIRROR_DEBIAN} \
-	--mirror-binary-security ${MIRROR_SECURITY} \
-	--mirror-binary-volatile ${MIRROR_VOLATILE} \
-	--mirror-binary-backports ${MIRROR_BACKPORTS} \
-	--mirror-bootstrap ${MIRROR_BOOTSTRAP} \
-	--mirror-chroot ${MIRROR_DEBIAN} \
-	--mirror-chroot-security ${MIRROR_SECURITY} \
-	--mirror-chroot-volatile ${MIRROR_VOLATILE} \
-	--mirror-chroot-backports ${MIRROR_BACKPORTS} \
-	--mode ${MODE} \
+	--mirror-binary "${MIRROR_DEBIAN}" \
+	--mirror-binary-security "${MIRROR_SECURITY}" \
+	--mirror-binary-volatile "${MIRROR_VOLATILE}" \
+	--mirror-binary-backports "${MIRROR_BACKPORTS}" \
+	--mirror-bootstrap "${MIRROR_BOOTSTRAP}" \
+	--mirror-chroot "${MIRROR_DEBIAN}" \
+	--mirror-chroot-security "${MIRROR_SECURITY}" \
+	--mirror-chroot-volatile "${MIRROR_VOLATILE}" \
+	--mirror-chroot-backports "${MIRROR_BACKPORTS}" \
+	--mode "${MODE}" \
 	--security true \
 	--tasks "japanese japanese-desktop japanese-gnome-desktop gnome desktop laptop" \
 	--tasksel aptitude \
 	--volatile true \
 	--win32-loader true \
-	-d ${DISTRIBUTION} \
+	-d "${DISTRIBUTION}" \
 	-l ja \
 	--net-root-server "192.168.10.11" \
 	--net-root-path "/srv/debian-live" \
